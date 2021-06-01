@@ -25,7 +25,7 @@
         </nav>
       </div>
 
-      <a class="nav-link collapsed" style="font-size: 1.1rem" href="#" data-toggle="collapse" id="menu-makanan" data-target="#collapse-manajemen-menu-makanan" aria-expanded="false" aria-controls="collapse-manajemen-menu-makanan">
+      {{-- <a class="nav-link collapsed" style="font-size: 1.1rem" href="#" data-toggle="collapse" id="menu-makanan" data-target="#collapse-manajemen-menu-makanan" aria-expanded="false" aria-controls="collapse-manajemen-menu-makanan">
         <div class="nav-link-icon"><i class="fas fa-utensils"></i></div>
         Menu Makanan
         <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
@@ -41,7 +41,11 @@
             List Order Makanan
           </a>
         </nav>
-      </div>
+      </div> --}}
+      <a class="nav-link" style="font-size: 1.1rem" id="menu-makanan" href="{{ route('Data Menu Makanan') }}">
+        <div class="nav-link-icon"><i class="fas fa-concierge-bell"></i></div>
+        Menu Makanan
+      </a>
 
       <a class="nav-link" style="font-size: 1.1rem" id="laporan" href="">
         <div class="nav-link-icon"><i class="fas fa-concierge-bell"></i></div>

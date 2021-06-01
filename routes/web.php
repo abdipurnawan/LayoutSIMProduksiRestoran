@@ -32,6 +32,16 @@ Route::get('/bahan-baku/permintaan', function () {
 Route::get('/menu-makanan', function () {
     return view('pages/menu-makanan/semua-menu-makanan');
 })->name('Data Menu Makanan');
+Route::get('/tambah-menu-makanan', function () {
+    return view('pages/menu-makanan/tambah-menu-makanan');
+})->name('Tambah Menu Makanan');
+Route::post('/store-menu-makanan', 'Controller@storeMenu')->name('Store Menu Makanan');
+Route::get('/detail-menu-makanan', function () {
+    return view('pages/menu-makanan/detail-menu-makanan');
+})->name('Detail Menu Makanan');
+Route::post('/update-menu-makanan', 'Controller@UpdateMenu')->name('Update Menu Makanan');
+
+
 Route::get('/bahan-baku/detail', function () {
     return view('pages/bahan-baku/detail-bahan-baku');
 })->name('Detail Bahan Baku');
