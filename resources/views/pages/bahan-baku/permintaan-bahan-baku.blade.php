@@ -17,12 +17,7 @@
               <div class="page-header-icon"><i data-feather="activity"></i></div>
               Permintaan
             </h1>
-            <div class="page-header-subtitle">List Semua bahan Baku Makanan</div>
-          </div>
-          <div class="col-12 col-xl-auto mt-4">
-            <button class="btn btn-white btn-sm line-height-normal p-3" id="reportrange">
-              {{Carbon\Carbon::now()->setTimezone('GMT+8')->format('d M Y H:i')}}
-            </button>
+            <div class="page-header-subtitle">List Semua Permintaan Bahan Baku Makanan</div>
           </div>
         </div>
       </div>
@@ -35,7 +30,7 @@
           <div class="card-header">
             <div class="row">
               <div class="col-12 my-auto">
-                <h3 class="card-title my-auto">Daftar Bahan Baku</h3>
+                <h3 class="card-title my-auto">Daftar Permintaan Bahan Baku</h3>
               </div>
             </div>
           </div>

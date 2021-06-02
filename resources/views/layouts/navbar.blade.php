@@ -7,37 +7,31 @@
       <div class="dropdown-menu dropdown-menu-right border-0 shadow animated--fade-in-up overflow-auto" aria-labelledby="navbarDropdownAlerts">
         <h6 class="dropdown-header dropdown-notifications-header sticky-top">
           <i class="mr-2" data-feather="bell"></i>
-          Alerts Center
+          Pemberitahuan
         </h6>
-        <a class="dropdown-item dropdown-notifications-item" href="#!">
-          <div class="dropdown-notifications-item-icon bg-warning"><i data-feather="activity"></i></div>
+        <a class="dropdown-item dropdown-notifications-item" href="{{ route('Data Order Makanan') }}">
+          <div class="dropdown-notifications-item-icon bg-primary"><div class="nav-link-icon text-center"><i class="fas fa-long-arrow-alt-down text-light"></i></div><i data-feather="activity"></i></div>
           <div class="dropdown-notifications-item-content">
-            <div class="dropdown-notifications-item-content-details">December 29, 2019</div>
-            <div class="dropdown-notifications-item-content-text">This is an alert message. It's nothing serious, but it requires your attention.</div>
+            <div class="dropdown-notifications-item-content-details">9 Juni 2021</div>
+            <div class="dropdown-notifications-item-content-text">Pesanan baru telah masuk!</div>
           </div>
         </a>
-        <a class="dropdown-item dropdown-notifications-item" href="#!">
-          <div class="dropdown-notifications-item-icon bg-info"><i data-feather="bar-chart"></i></div>
+        <a class="dropdown-item dropdown-notifications-item" href="{{ route('Data Bahan Baku') }}">
+          <div class="dropdown-notifications-item-icon bg-danger"><div class="nav-link-icon text-center"><i class="fas fa-exclamation-circle text-light"></i></div><i data-feather="activity"></i></div>
           <div class="dropdown-notifications-item-content">
-            <div class="dropdown-notifications-item-content-details">December 22, 2019</div>
-            <div class="dropdown-notifications-item-content-text">A new monthly report is ready. Click here to view!</div>
+            <div class="dropdown-notifications-item-content-details">9 Juni 2021</div>
+            <div class="dropdown-notifications-item-content-text">Terdapat bahan baku yang habis!</div>
           </div>
         </a>
-        <a class="dropdown-item dropdown-notifications-item" href="#!">
-          <div class="dropdown-notifications-item-icon bg-danger"><i class="fas fa-exclamation-triangle"></i></div>
+        <a class="dropdown-item dropdown-notifications-item" href="{{ route('Permintaan Bahan Baku') }}">
+          <div class="dropdown-notifications-item-icon bg-success"><div class="nav-link-icon text-center"><i class="fas fa-box text-light"></i></div><i data-feather="activity"></i></div>
           <div class="dropdown-notifications-item-content">
-            <div class="dropdown-notifications-item-content-details">December 8, 2019</div>
-            <div class="dropdown-notifications-item-content-text">Critical system failure, systems shutting down.</div>
+            <div class="dropdown-notifications-item-content-details">9 Juni 2021</div>
+            <div class="dropdown-notifications-item-content-text">Terdapat bahan baku yang telah sampai!</div>
           </div>
         </a>
-        <a class="dropdown-item dropdown-notifications-item" href="#!">
-          <div class="dropdown-notifications-item-icon bg-success"><i data-feather="user-plus"></i></div>
-          <div class="dropdown-notifications-item-content">
-            <div class="dropdown-notifications-item-content-details">December 2, 2019</div>
-            <div class="dropdown-notifications-item-content-text">New user request. Woody has requested access to the organization.</div>
-          </div>
-        </a>
-        <a class="dropdown-item dropdown-notifications-footer" href="#!">View All Alerts</a>
+        
+        <a class="dropdown-item dropdown-notifications-footer" href="#!">Lihat semua pemberitahuan</a>
       </div>
     </li>
     <li class="nav-item dropdown no-caret mr-2 dropdown-user">
@@ -46,16 +40,12 @@
         <h6 class="dropdown-header d-flex align-items-center">
           <img class="dropdown-user-img" src="https://source.unsplash.com/QAB-WJcbgJk/60x60" />
           <div class="dropdown-user-details">
-            <div class="dropdown-user-details-name">Valerie Luna</div>
-            <div class="dropdown-user-details-email">vluna@aol.com</div>
+            <div class="dropdown-user-details-name">Putu Bagus Restoran</div>
+            <div class="dropdown-user-details-email">putubagus</div>
           </div>
         </h6>
         <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="#!">
-          <div class="dropdown-item-icon"><i class="fas fa-user-cog"></i></div>
-          Profile Pribadi
-        </a>
-        <a class="dropdown-item" href="#!">
+        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
           <div class="dropdown-item-icon"><i class="fas fa-power-off"></i></div>
           Logout
         </a>

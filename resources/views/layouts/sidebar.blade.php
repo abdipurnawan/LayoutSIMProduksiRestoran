@@ -47,14 +47,9 @@
         Menu Makanan
       </a>
 
-      <a class="nav-link" style="font-size: 1.1rem" id="laporan" href="">
+      <a class="nav-link" style="font-size: 1.1rem" id="order-makanan" href="{{ route('Data Order Makanan') }}">
         <div class="nav-link-icon"><i class="fas fa-concierge-bell"></i></div>
         Order Makanan
-      </a>
-
-      <a class="nav-link" style="font-size: 1.1rem" id="laporan" href="">
-        <div class="nav-link-icon"><i class="fas fa-chart-line"></i></div>
-        Laporan
       </a>
 
     </div>

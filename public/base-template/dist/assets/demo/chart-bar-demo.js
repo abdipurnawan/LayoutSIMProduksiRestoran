@@ -33,13 +33,13 @@ var ctx = document.getElementById("myBarChart");
 var myBarChart = new Chart(ctx, {
     type: "bar",
     data: {
-        labels: ["January", "February", "March", "April", "May", "June"],
+        labels: ["January", "February", "March", "April", "May", "June", "Kamu"],
         datasets: [{
             label: "Revenue",
             backgroundColor: "rgba(0, 97, 242, 1)",
             hoverBackgroundColor: "rgba(0, 97, 242, 0.9)",
             borderColor: "#4e73df",
-            data: [4215, 5312, 6251, 7841, 9821, 14984]
+            data: [4215, 5312, 6251, 7841, 9821, 14984, 3000]
         }]
     },
     options: {

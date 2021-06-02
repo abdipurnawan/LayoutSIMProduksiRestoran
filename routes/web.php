@@ -42,6 +42,21 @@ Route::get('/detail-menu-makanan', function () {
 Route::post('/update-menu-makanan', 'Controller@UpdateMenu')->name('Update Menu Makanan');
 
 
+//Route Order Makanan
+Route::get('/order-makanan', function () {
+    return view('pages/pembuatan-makanan/semua-order-makanan');
+})->name('Data Order Makanan');
+
+//Route Auth
+Route::get('/register', function () {
+    return view('pages/auth/register');
+})->name('Register');
+
+Route::get('/login', function () {
+    return view('pages/auth/login');
+})->name('Login');
+
+
 Route::get('/bahan-baku/detail', function () {
     return view('pages/bahan-baku/detail-bahan-baku');
 })->name('Detail Bahan Baku');

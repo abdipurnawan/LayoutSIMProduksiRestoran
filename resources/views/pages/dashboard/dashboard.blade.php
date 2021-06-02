@@ -15,9 +15,13 @@
             <div class="page-header-subtitle">Dasboard Utama dari Sistem Manajemen Produksi</div>
           </div>
           <div class="col-12 col-xl-auto mt-4">
-            <button class="btn btn-white btn-sm line-height-normal p-3" id="reportrange">
-              {{Carbon\Carbon::now()->setTimezone('GMT+8')->format('d M Y H:i')}}
-            </button>
+            <button class="btn btn-white btn-sm line-height-normal p-3" id="dropdownMenuButton" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Filter Laporan</button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="javascript:void(0);">Berdasarkan menu</a>
+                <a class="dropdown-item" href="javascript:void(0);">Hari ini</a>
+                <a class="dropdown-item" href="javascript:void(0);">Bulan ini</a>
+                <a class="dropdown-item" href="javascript:void(0);">Tahun ini</a>
+            </div>
           </div>
         </div>
       </div>
@@ -31,19 +35,21 @@
             <div class="row align-items-center">
               <div class="col-xl-8 col-xxl-12">
                 <div class="text-center px-4 mb-4 mb-xl-0 mb-xxl-4">
-                  @if (Carbon\Carbon::now()->setTimezone('GMT+8')->format('i') >= 0 || Carbon\Carbon::now()->setTimezone('GMT+8')->format('i') < 10 )  
+                  @if (Carbon\Carbon::now()->setTimezone('GMT+8')->format('H') <= 10 )  
                     <h1 class="text-primary">Selamat Datang, Selamat Pagi</h1>
                   @else
-                    @if (Carbon\Carbon::now()->setTimezone('GMT+8')->format('i') > 10 || Carbon\Carbon::now()->setTimezone('GMT+8')->format('i') < 16 )  
+                    @if (Carbon\Carbon::now()->setTimezone('GMT+8')->format('H') <= 16  && Carbon\Carbon::now()->setTimezone('GMT+8')->format('H') > 10)  
                       <h1 class="text-primary">Selamat Datang, Selamat Siang</h1>
                     @else
                       <h1 class="text-primary">Selamat Datang, Selamat Malam</h1>
                     @endif
                   @endif
-                  <p class="text-gray-700 mb-0">It's time to get started! View new opportunities now, or continue on your previous work.</p>
+                  <p class="text-gray-700 mb-0">Daftar Order Makanan.</p>
+                  <div class="card-body d-flex flex-column justify-content-center">
+                    <div class="chart-bar"><canvas id="myBarChart" width="100%" height="30"></canvas></div>
+                  </div>
                 </div>
               </div>
-              <div class="col-xl-4 col-xxl-12 text-center"><img class="img-fluid" src="{{ asset('base-template/dist/assets/img/freepik/at-work-pana.svg')}}" style="max-width: 26rem;"/></div>
             </div>
           </div>
         </div>

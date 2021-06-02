@@ -1,7 +1,7 @@
 
 @extends('layouts/main')
 
-@section('tittle', 'Menu Makanan')
+@section('tittle', 'Order Makanan')
 
 @section('css')
   <link href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css" rel="stylesheet" crossorigin="anonymous"/>  
@@ -16,9 +16,9 @@
           <div class="col-auto mt-4">
             <h1 class="page-header-title">
               <div class="page-header-icon"><i data-feather="activity"></i></div>
-              Menu Makanan
+              Order Makanan
             </h1>
-            <div class="page-header-subtitle">List Semua Menu Makanan</div>
+            <div class="page-header-subtitle">List Semua Order Makanan</div>
           </div>
         
           {{-- <div class="col-12 col-xl-auto mt-4">
@@ -39,9 +39,6 @@
               <div class="col-6 my-auto">
                 <h3 class="card-title my-auto">Daftar Menu Makanan</h3>
               </div>
-              <a class="col-6 my-auto d-flex justify-content-end text-decoration-none" href="{{ route('Tambah Menu Makanan') }}">
-                <button class="btn btn-primary" type="button" >Tambah Menu Makanan</button>
-              </a>
             </div>
           </div>
           <div class="card-body table-responsive-md">
@@ -51,7 +48,7 @@
                   <th>No</th>
                   <th>Nama Menu</th>
                   <th>Kategori</th>
-                  <th>Harga Pokok Penjualan</th>
+                  <th>Jumlah Pesanan</th>
                   <th>Status</th>
                   <th class="d-md-none">Tindakan</th>
                   <th class="d-none d-md-table-cell">Tindakan</th>
@@ -64,10 +61,10 @@
                   <td class="align-middle">Makanan</td>
                   <td class="align-middle">Rp. 15.000</td>
                   <td class="align-middle">
-                    <div class="badge badge-success badge-pill">Tersedia</div>
+                    <div class="badge badge-primary badge-pill">Belum diproses</div>
                   </td>
                   <td class="text-center align-middle d-none d-md-table-cell">
-                    <a style="margin-right:7px" class="btn btn-info btn-sm" href="#" onclick="statusOrder()" ><i class="fas fa-exchange-alt" ></i></a><a style="margin-right:7px" class="btn btn-primary btn-sm" href="{{ route('Detail Menu Makanan') }}" ><i class="fas fa-eye" ></i></a><a class="btn btn-danger btn-sm" onclick="deleteMenu()" href="#"><i class="fas fa-trash"></i></a>
+                    <a style="margin-right:7px" class="btn btn-info btn-sm" href="#" onclick="statusOrder()" ><i class="fas fa-pencil-alt" ></i></a>
                   </td>
                 </tr>
                 <tr class="text-center align-middle my-auto">
@@ -76,10 +73,10 @@
                   <td class="align-middle">Minuman</td>
                   <td class="align-middle">Rp. 5.000</td>
                   <td class="align-middle">
-                    <div class="badge badge-success badge-pill">Tersedia</div>
+                    <div class="badge badge-success badge-pill">Selesai</div>
                   </td>
                   <td class="text-center align-middle d-none d-md-table-cell">
-                    <a style="margin-right:7px" class="btn btn-info btn-sm" href="#" onclick="statusOrder()" ><i class="fas fa-exchange-alt" ></i></a><a style="margin-right:7px" class="btn btn-primary btn-sm" href="{{ route('Detail Menu Makanan') }}" ><i class="fas fa-eye" ></i></a><a class="btn btn-danger btn-sm" onclick="deleteMenu()" href="#"><i class="fas fa-trash"></i></a>
+                    <a style="margin-right:7px" class="btn btn-info btn-sm" href="#" onclick="statusOrder()" ><i class="fas fa-pencil-alt" ></i></a>
                   </td>
                 </tr>
                 <tr class="text-center align-middle my-auto">
@@ -88,10 +85,10 @@
                   <td class="align-middle">Makanan</td>
                   <td class="align-middle">Rp. 16.000</td>
                   <td class="align-middle">
-                    <div class="badge badge-danger badge-pill">Tidak Tersedia</div>
+                    <div class="badge badge-warning badge-pill">Sedang diproses</div>
                   </td>
                   <td class="text-center align-middle d-none d-md-table-cell">
-                    <a style="margin-right:7px" class="btn btn-info btn-sm" href="#" onclick="statusOrder()" ><i class="fas fa-exchange-alt" ></i></a><a style="margin-right:7px" class="btn btn-primary btn-sm" href="{{ route('Detail Menu Makanan') }}" ><i class="fas fa-eye" ></i></a><a class="btn btn-danger btn-sm" onclick="deleteMenu()" href="#"><i class="fas fa-trash"></i></a>
+                    <a style="margin-right:7px" class="btn btn-info btn-sm" href="#" onclick="statusOrder()" ><i class="fas fa-pencil-alt" ></i></a>
                   </td>
                 </tr>
               </tbody>
@@ -101,16 +98,16 @@
       </div>
     </div>
   </div>
-  <div class="modal fade" id="menuMakanan" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="bahanBakuLabel" aria-hidden="true">
+  <div class="modal fade" id="orderMakanan" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="bahanBakuLabel" aria-hidden="true">
     <div class="modal-dialog modal-md" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">Status Menu Makanan</h5>
+          <h5 class="modal-title">Tindakan Order Makanan</h5>
           <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
         </div>
         <div class="modal-body text-dark text-center">
-            <button class="btn btn-success" type="button" onclick="alertSelesai()" data-dismiss="modal">Tersedia</button>
-            <button class="btn btn-danger" type="button" onclick="alertSelesai()" data-dismiss="modal">Tidak Tersedia</button>
+            <button class="btn btn-success" type="button" onclick="alertSelesai()" data-dismiss="modal">Order Selesai</button>
+            <button class="btn btn-primary" type="button" onclick="alertSelesai()" data-dismiss="modal">Mulai Proses</button>
         </div>
       </div>
     </div>
@@ -125,7 +122,7 @@
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script>
     $(document).ready(function(){
-      $('#menu-makanan').addClass('active');
+      $('#order-makanan').addClass('active');
 
       $("#tbBahanBaku").DataTable({
         "responsive": false, "lengthChange": false, "autoWidth": false,
@@ -146,22 +143,10 @@
       });
     });
 
-    function statusOrder(){
-        $('#menuMakanan').modal('show');
-    }
-
     function alertSelesai() {
       Swal.fire(
         'Berhasil!',
-        'Status menu makanan berhasil diubah',
-        'success'
-      )
-    }
-
-    function alertAdd() {
-      Swal.fire(
-        'Berhasil!',
-        'Menu makanan berhasil ditambahkan',
+        'Status order makanan berhasil diubah',
         'success'
       )
     }
@@ -192,6 +177,10 @@
                 alertDelete();
             }
         });
+    }
+
+    function statusOrder(){
+        $('#orderMakanan').modal('show');
     }
   </script>
     @if (session()->has('statusInput'))
