@@ -48,8 +48,6 @@
                   <th>Kategori</th>
                   <th>Jumlah</th>
                   <th>Status</th>
-                  <th class="d-md-none">Tindakan</th>
-                  <th class="d-none d-md-table-cell">Tindakan</th>
                 </tr>
               </thead>
               <tbody>
@@ -62,17 +60,6 @@
                   <td class="align-middle">
                     <div class="badge badge-success badge-pill">Tersedia</div>
                   </td>
-                  <td class="text-center align-middle d-md-none">
-                    <a href="{{ route('Detail Bahan Baku') }}" class="btn btn-secondary btn-sm">
-                      <i class="fas fa-eye"></i>
-                    </a>
-                  </td>
-                  <td class="text-center align-middle d-none d-md-table-cell">
-                    <a href="{{ route('Detail Bahan Baku') }}" class="btn btn-secondary btn-sm">
-                      <i class="fas fa-eye mr-1"></i>
-                      Detail
-                    </a>
-                  </td>
                 </tr>
                 <tr class="text-center align-middle my-auto">
                   <td class="align-middle">2</td>
@@ -83,16 +70,6 @@
                   <td class="align-middle">
                     <div class="badge badge-success badge-pill">Tersedia</div>
                   </td>
-                  <td class="text-center align-middle d-md-none">
-                    <a href="{{ route('Detail Bahan Baku') }}" class="btn btn-secondary btn-sm">
-                      <i class="fas fa-eye"></i>
-                    </a>
-                  </td>
-                  <td class="text-center align-middle d-none d-md-table-cell">
-                    <a href="{{ route('Detail Bahan Baku') }}" class="btn btn-secondary btn-sm">
-                      <i class="fas fa-eye mr-1"></i>Detail
-                    </a>
-                  </td>
                 </tr>
                 <tr class="text-center align-middle my-auto">
                   <td class="align-middle">3</td>
@@ -102,16 +79,6 @@
                   <td class="align-middle">10</td>
                   <td class="align-middle">
                     <div class="badge badge-danger badge-pill">Tidak Tersedia</div>
-                  </td>
-                  <td class="text-center align-middle d-md-none">
-                    <a href="{{ route('Detail Bahan Baku') }}" class="btn btn-secondary btn-sm">
-                      <i class="fas fa-eye"></i>
-                    </a>
-                  </td>
-                  <td class="text-center align-middle d-none d-md-table-cell">
-                    <a href="{{ route('Detail Bahan Baku') }}" class="btn btn-secondary btn-sm">
-                      <i class="fas fa-eye mr-1"></i> Detail
-                    </a>
                   </td>
                 </tr>
               </tbody>
