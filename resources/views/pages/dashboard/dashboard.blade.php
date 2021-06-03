@@ -17,10 +17,10 @@
           <div class="col-12 col-xl-auto mt-4">
             <button class="btn btn-white btn-sm line-height-normal p-3" id="dropdownMenuButton" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Filter Laporan</button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="javascript:void(0);">Berdasarkan menu</a>
-                <a class="dropdown-item" href="javascript:void(0);">Hari ini</a>
-                <a class="dropdown-item" href="javascript:void(0);">Bulan ini</a>
-                <a class="dropdown-item" href="javascript:void(0);">Tahun ini</a>
+                <a onclick="setChartDataMakanan(this)" class="dropdown-item" href="javascript:void(0);">Berdasarkan menu</a>
+                <a onclick="setChartDataMingguan(this)" class="dropdown-item active" href="javascript:void(0);">Minggu</a>
+                <a onclick="setDataBulanan(this)" class="dropdown-item" href="javascript:void(0);">Bulan</a>
+                <a onclick="setDataTahunan(this)" class="dropdown-item" href="javascript:void(0);">Tahun</a>
             </div>
           </div>
         </div>
@@ -63,5 +63,22 @@
       $(document).ready(function(){
         $('#dashboard').addClass('active');
       });
+    </script>
+    <script>
+
+    function setChartDataMingguan(e){
+      $('.dropdown-item').removeClass("active");
+      e.classList.add("active");
+      myBarChart.clear();
+      myBarChart.data.labels = ["Minggu ke-1", "Minggu Ke-2", "Minggu Ke-3", "Minggu Ke-4"];
+      myBarChart.data.datasets = [{
+            label: "Revenue",
+            backgroundColor: "rgba(0, 97, 242, 1)",
+            hoverBackgroundColor: "rgba(0, 97, 242, 0.9)",
+            borderColor: "#4e73df",
+            data: [3245000, 4768500, 7821000, 4042300]
+        }]
+      myBarChart.update();
+    }
     </script>
 @endpush

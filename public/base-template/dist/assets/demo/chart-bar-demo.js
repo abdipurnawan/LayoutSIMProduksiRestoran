@@ -33,13 +33,13 @@ var ctx = document.getElementById("myBarChart");
 var myBarChart = new Chart(ctx, {
     type: "bar",
     data: {
-        labels: ["January", "February", "March", "April", "May", "June", "Kamu"],
+        labels: ["Minggu ke-1", "Minggu Ke-2", "Minggu Ke-3", "Minggu Ke-4"],
         datasets: [{
             label: "Revenue",
             backgroundColor: "rgba(0, 97, 242, 1)",
             hoverBackgroundColor: "rgba(0, 97, 242, 0.9)",
             borderColor: "#4e73df",
-            data: [4215, 5312, 6251, 7841, 9821, 14984, 3000]
+            data: [3245000, 4768500, 7821000, 4042300]
         }]
     },
     options: {
@@ -69,12 +69,12 @@ var myBarChart = new Chart(ctx, {
             yAxes: [{
                 ticks: {
                     min: 0,
-                    max: 15000,
+                    max: 10000000,
                     maxTicksLimit: 5,
                     padding: 10,
                     // Include a dollar sign in the ticks
                     callback: function(value, index, values) {
-                        return "$" + number_format(value);
+                        return "Rp " + number_format(value);
                     }
                 },
                 gridLines: {
@@ -105,9 +105,73 @@ var myBarChart = new Chart(ctx, {
                 label: function(tooltipItem, chart) {
                     var datasetLabel =
                         chart.datasets[tooltipItem.datasetIndex].label || "";
-                    return datasetLabel + ": $" + number_format(tooltipItem.yLabel);
+                    return datasetLabel + ": Rp " + number_format(tooltipItem.yLabel);
                 }
             }
         }
     }
 });
+
+function setChartDataMakanan(e){
+    $('.dropdown-item').removeClass("active");
+    e.classList.add("active");
+    myBarChart.clear();
+    myBarChart.data.labels = ["Burger", "Salad", "Pizza", "spaghetti"];
+    myBarChart.data.datasets = [{
+          label: "Revenue",
+          backgroundColor: "rgba(0, 97, 242, 1)",
+          hoverBackgroundColor: "rgba(0, 97, 242, 0.9)",
+          borderColor: "#4e73df",
+          data: [12450000, 7685000, 7210000, 4042300]
+      }],
+    myBarChart.options.scales.yAxes[0].ticks.max = 10000000;
+    myBarChart.update();
+  }
+
+function setChartDataMingguan(e){
+    $('.dropdown-item').removeClass("active");
+    e.classList.add("active");
+    myBarChart.clear();
+    myBarChart.data.labels = ["Minggu ke-1", "Minggu Ke-2", "Minggu Ke-3", "Minggu Ke-4"];
+    myBarChart.data.datasets = [{
+          label: "Revenue",
+          backgroundColor: "rgba(0, 97, 242, 1)",
+          hoverBackgroundColor: "rgba(0, 97, 242, 0.9)",
+          borderColor: "#4e73df",
+          data: [1245000, 768500, 721000, 442300]
+      }],
+    myBarChart.options.scales.yAxes[0].ticks.max = 10000000;
+    myBarChart.update();
+  }
+
+  function setDataBulanan(e){
+    $('.dropdown-item').removeClass("active");
+    e.classList.add("active");
+    myBarChart.clear();
+    myBarChart.data.labels = ["Januari", "Februari", "Maret", "Aprli","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember"];
+    myBarChart.data.datasets = [{
+          label: "Revenue",
+          backgroundColor: "rgba(0, 97, 242, 1)",
+          hoverBackgroundColor: "rgba(0, 97, 242, 0.9)",
+          borderColor: "#4e73df",
+          data: [3245000, 4768500, 7821000, 5042300,2245000, 3768500, 4321000, 5662300,7845000, 4268500, 7121000, 2342300]
+      }]
+    myBarChart.options.scales.yAxes[0].ticks.max = 10000000;
+    myBarChart.update();
+  }
+
+  function setDataTahunan(e){
+    $('.dropdown-item').removeClass("active");
+    e.classList.add("active");
+    myBarChart.clear();
+    myBarChart.data.labels = ["2020","2021"];
+    myBarChart.data.datasets = [{
+          label: "Revenue",
+          backgroundColor: "rgba(0, 97, 242, 1)",
+          hoverBackgroundColor: "rgba(0, 97, 242, 0.9)",
+          borderColor: "#4e73df",
+          data: [32045000, 47685000]
+      }];
+    myBarChart.options.scales.yAxes[0].ticks.max = 100000000;
+    myBarChart.update();
+  }
