@@ -59,7 +59,7 @@
                   <td class="align-middle">1</td>
                   <td class="align-middle">Nasi Goreng Spesial</td>
                   <td class="align-middle">Makanan</td>
-                  <td class="align-middle">Rp. 15.000</td>
+                  <td class="align-middle">2</td>
                   <td class="align-middle">
                     <div class="badge badge-primary badge-pill">Belum diproses</div>
                   </td>
@@ -71,7 +71,7 @@
                   <td class="align-middle">2</td>
                   <td class="align-middle">Ice Tea</td>
                   <td class="align-middle">Minuman</td>
-                  <td class="align-middle">Rp. 5.000</td>
+                  <td class="align-middle">2</td>
                   <td class="align-middle">
                     <div class="badge badge-success badge-pill">Selesai</div>
                   </td>
@@ -83,7 +83,7 @@
                   <td class="align-middle">3</td>
                   <td class="align-middle">Roti Bakar</td>
                   <td class="align-middle">Makanan</td>
-                  <td class="align-middle">Rp. 16.000</td>
+                  <td class="align-middle">1</td>
                   <td class="align-middle">
                     <div class="badge badge-warning badge-pill">Sedang diproses</div>
                   </td>

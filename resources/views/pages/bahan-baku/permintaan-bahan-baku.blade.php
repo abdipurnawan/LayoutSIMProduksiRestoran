@@ -174,7 +174,7 @@
     function showAlert() {
       Swal.fire(
         'Berhasil!',
-        'Request Bahan Baku Makanan Berhasil Dikirim',
+        'Request Bahan Baku Makanan Berhasil Diterima',
         'success'
       )
     }
