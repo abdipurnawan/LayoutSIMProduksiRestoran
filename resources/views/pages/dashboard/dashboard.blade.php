@@ -64,21 +64,4 @@
         $('#dashboard').addClass('active');
       });
     </script>
-    <script>
-
-    function setChartDataMingguan(e){
-      $('.dropdown-item').removeClass("active");
-      e.classList.add("active");
-      myBarChart.clear();
-      myBarChart.data.labels = ["Minggu ke-1", "Minggu Ke-2", "Minggu Ke-3", "Minggu Ke-4"];
-      myBarChart.data.datasets = [{
-            label: "Revenue",
-            backgroundColor: "rgba(0, 97, 242, 1)",
-            hoverBackgroundColor: "rgba(0, 97, 242, 0.9)",
-            borderColor: "#4e73df",
-            data: [3245000, 4768500, 7821000, 4042300]
-        }]
-      myBarChart.update();
-    }
-    </script>
 @endpush

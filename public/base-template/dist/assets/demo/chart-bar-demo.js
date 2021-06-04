@@ -113,6 +113,7 @@ var myBarChart = new Chart(ctx, {
 });
 
 function setChartDataMakanan(e){
+    console.log("makanan")
     $('.dropdown-item').removeClass("active");
     e.classList.add("active");
     myBarChart.clear();
@@ -122,13 +123,17 @@ function setChartDataMakanan(e){
           backgroundColor: "rgba(0, 97, 242, 1)",
           hoverBackgroundColor: "rgba(0, 97, 242, 0.9)",
           borderColor: "#4e73df",
-          data: [12450000, 7685000, 7210000, 4042300]
+          data: [120, 768, 721, 404]
       }],
-    myBarChart.options.scales.yAxes[0].ticks.max = 10000000;
+    myBarChart.options.scales.yAxes[0].ticks.max = 1000;
+    myBarChart.options.scales.yAxes[0].ticks.callback = function(value,index,values){
+        return "Jumlah "+value;
+    };
     myBarChart.update();
   }
 
 function setChartDataMingguan(e){
+    console.log("mingguan")
     $('.dropdown-item').removeClass("active");
     e.classList.add("active");
     myBarChart.clear();
@@ -138,13 +143,17 @@ function setChartDataMingguan(e){
           backgroundColor: "rgba(0, 97, 242, 1)",
           hoverBackgroundColor: "rgba(0, 97, 242, 0.9)",
           borderColor: "#4e73df",
-          data: [1245000, 768500, 721000, 442300]
+          data: [3245000, 4768500, 7821000, 4042300]
       }],
     myBarChart.options.scales.yAxes[0].ticks.max = 10000000;
+    myBarChart.options.scales.yAxes[0].ticks.callback = function(value,index,values){
+        return "Rp "+number_format(value);
+    };
     myBarChart.update();
   }
 
   function setDataBulanan(e){
+    console.log("bulanan")
     $('.dropdown-item').removeClass("active");
     e.classList.add("active");
     myBarChart.clear();
@@ -161,6 +170,7 @@ function setChartDataMingguan(e){
   }
 
   function setDataTahunan(e){
+    console.log("thunanan")
     $('.dropdown-item').removeClass("active");
     e.classList.add("active");
     myBarChart.clear();
